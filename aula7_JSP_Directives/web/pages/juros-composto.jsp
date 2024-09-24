@@ -67,8 +67,11 @@
                 
                 out.println("</table>");
                 out.println("<p>Taxa de Juros (%): " + String.format("%.2f", taxaJuros) + "</p>");
-                out.println("<p>Quantidade de meses informado: " + quantidadeMeses + "</p>");
-                
+                out.println("<p>Quantidade de meses informado: " + quantidadeMeses + "</p>");    
+            }
+            else {
+                out.println("<hr>");
+                out.println("<b style='color: red;'>Erro! Falha ao reconhecer os parâmetros enviados</b>");
             }
         %>
     </body>
