@@ -64,6 +64,10 @@
                 out.println("<p>Quantidade de meses informado: " + quantidadeMeses + "</p>");
                 out.println("<p>Valor Futuro do Montante: R$ " + String.format("%.2f", valorFuturo) + "</p>");
             }
+            else {
+                out.println("<hr>");
+                out.println("<b style='color: red;'>Erro! Falha ao reconhecer os parâmetros enviados</b>");
+            }
         %>
     </body>
 </html>
