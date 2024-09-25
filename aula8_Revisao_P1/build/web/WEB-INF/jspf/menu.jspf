@@ -1,0 +1,14 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<style>
+    a { margin: 15px; }
+    hr { margin: 15px 0; }
+    h1 { margin: 15px; }
+    label, input[TYPE=SUBMIT], b { margin-left: 15px; }
+</style>
+<hr>
+<a href="index.jsp">Index</a>
+<a href="numero-primo.jsp">Número Primo</a>  
+<a href="fibonacci.jsp">Fibonacci</a>
+<a href="soma.jsp">Soma</a>
+<hr>

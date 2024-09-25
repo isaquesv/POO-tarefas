@@ -1,0 +1,69 @@
+<%-- 
+    Document   : numero-primo.jsp
+    Created on : 24 de set. de 2024, 13:52:37
+    Author     : isaquesv
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Tarefa Teste P1</title>
+    </head>
+    <body>
+        <h1>Número Primo</h1>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
+
+        <form action="numero-primo.jsp">
+            <%
+                String messageError = null;
+                int n1 = 3;
+
+                try {
+                    if (request.getParameter("n1") != null) {
+                        n1 = Integer.parseInt(request.getParameter("n1"));
+                        
+                        if (n1 < 1) {
+                            n1 *= -1;
+                        }
+                    }
+                } catch (Exception ex) {
+                    messageError = ex.getMessage();
+                }
+
+            %>
+            <label for="n1">Insira um número inteiro e positivo:</label>
+            <input name="n1" id="n1" type="number" placeholder="5" value="<%= n1%>" required><br>
+            <input type="submit" value="Verificar Número Primo">
+            <hr>
+
+            <%
+                if (messageError == null) {
+                    if (request.getParameter("n1") != null) {
+
+                        boolean numeroPrimoSimOuNao = true;
+
+                        for (int i = 2; i <= n1 / 2; i++) {
+                            if (n1 % i == 0) {
+                                if (numeroPrimoSimOuNao == true) {
+                                    numeroPrimoSimOuNao = false;
+                                    out.print("<label>" + n1 + " não é um número primo!</label><br>");
+                                    out.print("<label>Lista de divisores: </label>");
+                                }
+                                out.print(i + ", ");
+                            }
+                        }
+
+                        if (numeroPrimoSimOuNao == true) {
+                            out.print("<label>" + n1 + " é um número primo!</label>");
+                        }
+
+                    }
+                } else {
+                    out.println("<b style='color: red;'>" + messageError + "</b>");
+                }
+            %>
+        </form>
+    </body>
+</html>
