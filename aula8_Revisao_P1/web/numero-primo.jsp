@@ -21,26 +21,30 @@
                 int n1 = 3;
 
                 try {
-                    if (request.getParameter("n1") != null) {
-                        n1 = Integer.parseInt(request.getParameter("n1"));
-                        
-                        if (n1 < 1) {
-                            n1 *= -1;
+                    if (request.getParameter("numeroPrimo") != null) {
+                        if (request.getParameter("n1") != null) {
+                            n1 = Integer.parseInt(request.getParameter("n1"));
+
+                            if (n1 < 1) {
+                                n1 *= -1;
+                            }
                         }
                     }
                 } catch (Exception ex) {
                     messageError = ex.getMessage();
                 }
-
             %>
+            
             <label for="n1">Insira um número inteiro e positivo:</label>
-            <input name="n1" id="n1" type="number" placeholder="5" value="<%= n1%>" required><br>
-            <input type="submit" value="Verificar Número Primo">
+            <input name="n1" id="n1" type="number" placeholder="5" value="<%= n1 %>" required><br>
+            <input type="submit" name="numeroPrimo" value="Verificar Número Primo">
             <hr>
 
             <%
+                // Caso não haja mensagem de erro
                 if (messageError == null) {
-                    if (request.getParameter("n1") != null) {
+                    // Caso os parâmetros estejam preenchidos corretamente
+                    if (request.getParameter("numeroPrimo") != null && request.getParameter("n1") != null) {
 
                         boolean numeroPrimoSimOuNao = true;
 
@@ -48,20 +52,40 @@
                             if (n1 % i == 0) {
                                 if (numeroPrimoSimOuNao == true) {
                                     numeroPrimoSimOuNao = false;
-                                    out.print("<label>" + n1 + " não é um número primo!</label><br>");
-                                    out.print("<label>Lista de divisores: </label>");
+                                    %>
+                                    <label>
+                                        <%= n1 %> não é um número primo!
+                                    </label>
+                                    <br>
+                                    <label>
+                                        Lista de divisores: 
+                                    </label>
+                                    <%
                                 }
                                 out.print(i + ", ");
                             }
                         }
 
                         if (numeroPrimoSimOuNao == true) {
-                            out.print("<label>" + n1 + " é um número primo!</label>");
+                            %>
+                            <label>
+                                <%= n1 %> é um número primo!
+                            </label>
+                            <%
                         }
-
                     }
+                    // Caso os parâmetros não estejam preenchidos corretamente
+                    else if (request.getParameter("numeroPrimo") != null || request.getParameter("n1") != null) {
+                        %>
+                        <hr>
+                        <b style="color: red;">Erro! Falha ao reconhecer todos os parâmetros enviados. Preencha e envie o formulário novamente!</b>
+                        <%
+                    }
+                // Caso haja mensagem de erro
                 } else {
-                    out.println("<b style='color: red;'>" + messageError + "</b>");
+                    %>
+                    <b style="color: red;"> <%= messageError %></b>
+                    <%
                 }
             %>
         </form>
