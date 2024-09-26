@@ -17,40 +17,54 @@
         
         <form action="soma.jsp">
             <%
-                String messageError = null;
+                String errorMessage = null;
                 int n1 = 3, resultadoTotal = 0;
 
                 try {
-                    if (request.getParameter("n1") != null) {
-                        n1 = Integer.parseInt(request.getParameter("n1"));
-                        
-                        if (n1 < 1) {
-                            n1 *= -1;
+                    if (request.getParameter("gerarSoma") != null) {
+                        if (request.getParameter("n1") != null) {
+                            n1 = Integer.parseInt(request.getParameter("n1"));
+
+                            if (n1 < 1) {
+                                n1 *= -1;
+                            }
                         }
                     }
                 } catch (Exception ex) {
-                    messageError = ex.getMessage();
+                    errorMessage = ex.getMessage();
                 }
-
             %>
             
             <label for="n1">Insira um número inteiro e positivo: </label>
-            <input name="n1" id="n1" type="number" placeholder="0" value="<%= n1%>" required><br>
-            <input type="submit" value="Gerar Soma">
+            <input name="n1" id="n1" type="number" placeholder="0" value="<%= n1 %>" required><br>
+            <input type="submit" name="gerarSoma" value="Gerar Soma">
             <hr>
 
             <%
-                if (messageError == null) {
-                    if (request.getParameter("n1") != null) {
+                // Caso não haja mensagem de erro
+                if (errorMessage == null) {
+                    // Caso os parâmetros estejam preenchidos corretamente
+                    if (request.getParameter("gerarSoma") != null && request.getParameter("n1") != null) {
                         
                         for (int i = 1; i <= n1; i++) {
                             resultadoTotal += i;
                         }
-                        out.println("<label>A soma de 1 até " + n1 + " é: " + resultadoTotal + "</label>");
-                    
+                        %>
+                        <label>A soma de 1 até <%= n1 %> é: <%= resultadoTotal %></label>;
+                        <%
                     }
+                    // Caso os parâmetros não estejam preenchidos corretamente
+                    else if (request.getParameter("gerarSoma") != null || request.getParameter("n1") != null) {
+                        %>
+                        <hr>
+                        <b style="color: red;">Erro! Falha ao reconhecer todos os parâmetros enviados. Preencha e envie o formulário novamente!</b>
+                        <%
+                    }
+                // Caso haja mensagem de erro
                 } else {
-                    out.println("<b style='color: red;'>" + messageError + "</b>");
+                    %>
+                    <b style="color: red;"> <%= errorMessage %></b>
+                    <%
                 }
             %>
         </form>
