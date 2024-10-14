@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Index | Aula 07 - JSP Directives | JSP Page</title>
+        <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
         <h1>Index</h1>
