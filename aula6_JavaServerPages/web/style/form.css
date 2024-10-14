@@ -1,0 +1,29 @@
+/* 
+    Created on : 14 de out. de 2024, 09:12:32
+    Author     : isaquesv
+*/
+
+form {
+    width: 230px;
+    margin: 25px;
+}
+form #form-content {
+    display: flex;
+}
+form #form-content #left {
+    padding-right: 10px;
+}
+form #form-content #right select {
+    width: 100%;
+}
+form #form-content #right input {
+    width: 80px;
+}
+form #form-content #right select, #form-content #right input {
+    text-align: center;
+}
+form input[TYPE=SUBMIT] {
+    padding: 4px;
+    margin-top: 10px;
+    width: 100%;
+}

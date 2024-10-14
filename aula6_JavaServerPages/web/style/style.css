@@ -1,0 +1,43 @@
+/* 
+    Created on : 14 de out. de 2024, 09:11:35
+    Author     : isaquesv
+*/
+
+body {
+    margin: 0;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+h1 {
+    margin: 10px 25px 15px 25px;
+}
+
+#header {
+    display: flex;
+}
+#header h4 {
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+#div-table {
+    margin-top: 36px;
+    margin-bottom: 46px;
+    text-align: center;
+}
+#div-table table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+#div-table table tr td {
+    text-align: start;
+}
+#div-table table tr th {
+    width: 130px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: normal;
+}
+#div-table table tr td {
+    padding: 0px 15px 60px 15px;
+}
