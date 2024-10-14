@@ -19,7 +19,7 @@ public class GreetingServlet extends HttpServlet {
         String horarioAtual, mensagem = null;
         LocalDateTime dataAtual = LocalDateTime.now();
 
-        // Capturando a HORA, MINUTOS e SEGUNDOS atuais
+        // Capturando a HORA, MINUTOs e SEGUNDOS atuais
         int horaAtual = dataAtual.getHour();
         int minutosAtual = dataAtual.getMinute();
         int segundosAtual = dataAtual.getSecond();
@@ -70,5 +70,16 @@ public class GreetingServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    public String getServletInfo() {
+        return "Short description";
     }
 }
