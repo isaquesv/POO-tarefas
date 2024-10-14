@@ -1,0 +1,36 @@
+/* 
+    Created on : 14 de out. de 2024, 09:32:57
+    Author     : familia05
+*/
+
+body {
+    font-family: arial;
+}
+
+h1, h2, p, table {
+    margin: 15px;
+}
+
+td {
+    padding: 15px 45px;
+}
+
+hr {
+    margin: 15px 0;
+}
+
+a {
+    text-decoration: none;
+    margin: 15px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+form, b {
+    margin: 15px;
+}
+input {
+    padding: 5px 10px;
+    margin: 4px 0;
+}
