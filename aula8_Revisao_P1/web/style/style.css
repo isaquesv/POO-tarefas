@@ -1,0 +1,28 @@
+/* 
+    Created on : 14 de out. de 2024, 09:53:14
+    Author     : isaquesv
+*/
+
+body {
+    font-family: arial;
+}
+
+a {
+    text-decoration: none;
+    margin: 15px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    margin: 15px 0;
+}
+
+h1 {
+    margin: 15px;
+}
+
+label, input[TYPE=SUBMIT], b {
+    margin-left: 15px;
+}
