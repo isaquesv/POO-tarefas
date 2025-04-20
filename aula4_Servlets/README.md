@@ -7,5 +7,5 @@ Crie um projeto com uma página HTML apresentando links para estes três sevlets
 - RandomServlet, que responda pela URL “random.html” e apresente uma tabela com 6 números aleatórios não repetidos entre 1 e 60
 
 ## Outros Exercícios
-- [Servlets 2:](https://github.com/isaquesv/POO-tarefas/tree/main/aula5_Servlets_II)
+- [Servlets 2](https://github.com/isaquesv/POO-tarefas/tree/main/aula5_Servlets_II)
 - [Lista completa](https://github.com/isaquesv/POO-tarefas)
