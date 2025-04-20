@@ -7,8 +7,8 @@ Repositório destinado ao registro das tarefas desenvolvidas na disciplina de **
 
 Lista de exercícios desenvolvidos ao longo da disciplina:
 
- - [Servlets:](https://github.com/isaquesv/POO-tarefas/tree/main/aula4_Servlets)
- - [Servlets 2:](https://github.com/isaquesv/POO-tarefas/tree/main/aula5_Servlets_II)
+ - [Servlets](https://github.com/isaquesv/POO-tarefas/tree/main/aula4_Servlets)
+ - [Servlets 2](https://github.com/isaquesv/POO-tarefas/tree/main/aula5_Servlets_II)
  - [JavaServer Pages (JSP)](https://github.com/isaquesv/POO-tarefas/tree/main/aula6_JavaServerPages)
  - [JavaServer Pages Directives](https://github.com/isaquesv/POO-tarefas/tree/main/aula7_JSP_Directives)
  - [Revisão P1](https://github.com/isaquesv/POO-tarefas/tree/main/aula8_Revisao_P1)
